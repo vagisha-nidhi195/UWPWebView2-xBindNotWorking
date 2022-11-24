@@ -1,19 +1,4 @@
----
-description: "Demonstrates the features and usage patterns of WebView2 running in a UWP application using WinUI 2."
-extendedZipContent:
-  -
-    path: SharedContent
-    target: SharedContent
-  -
-    path: LICENSE
-    target: LICENSE
-languages:
-  - cpp
-page_type: sample
-products:
-  - microsoft-edge
-urlFragment: webview2_sample_uwp
----
+
 # WinUI 2 (UWP) sample app
 
 <!-- only enough info to differentiate this sample vs the others; what is different about this sample compared to the sibling samples? -->
@@ -24,3 +9,10 @@ This sample is built as a UWP Visual Studio 2019 project.  It uses C++ and HTML/
 For more information, see [WinUI 2 (UWP) sample app](https://learn.microsoft.com/microsoft-edge/webview2/samples/webview2_sample_uwp).
 
 ![The running WinUI 2 (UWP) sample app](screenshots/webview2_sample_uwp-webpage-content.png)
+
+
+# Issues with two way x:Bind
+
+When you run this app, you will notice that it causes a stack overflow exception. I am using a two-way x:Bind on Source value of the webview.
+
+When you change the X:Bind to Binding => it will not work as expected, i.e. when you change the source view model, the webview2 source property does not change
